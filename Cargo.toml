@@ -1,0 +1,16 @@
+[package]
+name = "ei-sys"
+description = "Low level Rust bindings to ei, a library to communicate with distributed Erlang."
+version = "0.1.0"
+license = "Apache-2.0"
+authors = ["Simon Génier <1782845+animalsiknow@users.noreply.github.com>"]
+homepage = "https://github.com/animalsiknow/ei-sys"
+edition = "2018"
+links = "ei"
+build = "build.rs"
+keywords = ["FFI", "Erlang", "BEAM"]
+categories = ["external-ffi-bindings", "no-std"]
+
+[dependencies.libc]
+version = "0.2"
+default-features = false
