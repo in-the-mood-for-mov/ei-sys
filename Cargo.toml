@@ -16,3 +16,7 @@ categories = ["external-ffi-bindings", "no-std"]
 [dependencies.libc]
 version = "0.2"
 default-features = false
+
+[target.'cfg(windows)'.dependencies.winapi]
+version = "0.3"
+features = ["inaddr"]

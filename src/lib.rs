@@ -6,7 +6,14 @@
 #![allow(non_upper_case_globals)]
 
 use core::{ffi::c_void, ops};
+
 use libc::{c_char, c_int, c_long, c_longlong, c_short, c_uchar, c_uint, c_ulong, c_ulonglong};
+
+#[cfg(not(windows))]
+type in_addr = libc::in_addr;
+
+#[cfg(windows)]
+type in_addr = winapi::shared::inaddr::in_addr;
 
 pub const ERL_TICK: c_int = 0;
 pub const ERL_MSG: c_int = 1;
@@ -175,7 +182,7 @@ extern "C" {
     thishostname: *const c_char,
     thisalivename: *const c_char,
     thisnodename: *const c_char,
-    thisipaddr: *mut libc::in_addr,
+    thisipaddr: *mut in_addr,
     cookie: *const c_char,
     creation: c_short,
   ) -> c_int;
@@ -196,7 +203,7 @@ extern "C" {
   /// [The official entry for this function in the Erlang documentation.](http://erlang.org/doc/man/ei_connect.html#ei_xconnect)
   pub fn ei_xconnect(
     node: *mut ei_cnode,
-    remote_host: *mut libc::in_addr,
+    remote_host: *mut in_addr,
     remote_name: *mut c_char,
   ) -> c_int;
 
@@ -224,7 +231,7 @@ extern "C" {
   /// [The official entry for this function in the Erlang documentation.](http://erlang.org/doc/man/ei_connect.html#ei_xconnect_tmo)
   pub fn ei_xconnect_tmo(
     node: *mut ei_cnode,
-    remote_host: *mut libc::in_addr,
+    remote_host: *mut in_addr,
     remote_name: *mut c_char,
     ms: c_uint,
   ) -> c_int;
