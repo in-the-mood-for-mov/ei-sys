@@ -164,7 +164,7 @@ extern "C" {
   /// The initial capacity of an [`ei_x_buff`] in bytes, when created with [`ei_x_new`].
   ///
   /// [`ei_x_buff`]: type.ei_x_buff.html
-  /// [`ei_x_buff`]: fn.ei_x_new.html
+  /// [`ei_x_new`]: fn.ei_x_new.html
   pub static mut ei_x_extra: c_int;
 
   /// Returns a pointer to the thread-local storage where `erl_errno` is stored.
