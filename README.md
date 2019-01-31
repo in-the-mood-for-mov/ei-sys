@@ -8,4 +8,4 @@ Because this crate needs the Erlang shell to configure itself and because it sta
 
 ## Documentation
 
-The official Erlang documentation on [`ei`](http://erlang.org/doc/man/ei.html) and [`ei_connect`](http://erlang.org/doc/man/ei_connect.html) contains information on how to use this library, as well as a complete listing of the types and functions. The [documentation for this crate](https://animalsiknow.github.io/ei_sys/) has additional information that can be of interest to those building on top of this crate, such as the precondition to respect safely whan calling into this crate.
+The official Erlang documentation on [`ei`](http://erlang.org/doc/man/ei.html) and [`ei_connect`](http://erlang.org/doc/man/ei_connect.html) contains information on how to use this library, as well as a complete listing of the types and functions. The [documentation for this crate](https://animalsiknow.github.io/doc/ei_sys/) has additional information that can be of interest to those building on top of this crate, such as the precondition to respect safely whan calling into this crate.
