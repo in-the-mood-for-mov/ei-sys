@@ -10,10 +10,10 @@ use core::{ffi::c_void, ops};
 use libc::{c_char, c_int, c_long, c_longlong, c_short, c_uchar, c_uint, c_ulong, c_ulonglong};
 
 #[cfg(not(windows))]
-type in_addr = libc::in_addr;
+pub type in_addr = libc::in_addr;
 
 #[cfg(windows)]
-type in_addr = winapi::shared::inaddr::in_addr;
+pub type in_addr = winapi::shared::inaddr::in_addr;
 
 pub const ERL_TICK: c_int = 0;
 pub const ERL_MSG: c_int = 1;
