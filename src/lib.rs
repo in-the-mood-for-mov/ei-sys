@@ -31,6 +31,29 @@ pub const MAXATOMLEN: usize = 255 + 1;
 pub const MAXATOMLEN_UTF8: usize = 255 * 4 + 1;
 pub const MAXNODELEN: usize = EI_MAXALIVELEN + 1 + EI_MAXHOSTNAMELEN;
 
+pub const ERL_ATOM_EXT: c_char = b'd' as c_char;
+pub const ERL_SMALL_ATOM_EXT: c_char = b's' as c_char;
+pub const ERL_ATOM_UTF8_EXT: c_char = b'v' as c_char;
+pub const ERL_SMALL_ATOM_UTF8_EXT: c_char = b'w' as c_char;
+pub const ERL_REFERENCE_EXT: c_char = b'e' as c_char;
+pub const ERL_NEW_REFERENCE_EXT: c_char = b'r' as c_char;
+pub const ERL_NEWER_REFERENCE_EXT: c_char = b'Z' as c_char;
+pub const ERL_PORT_EXT: c_char = b'f' as c_char;
+pub const ERL_NEW_PORT_EXT: c_char = b'Y' as c_char;
+pub const ERL_PID_EXT: c_char = b'g' as c_char;
+pub const ERL_NEW_PID_EXT: c_char = b'X' as c_char;
+pub const ERL_SMALL_TUPLE_EXT: c_char = b'h' as c_char;
+pub const ERL_LARGE_TUPLE_EXT: c_char = b'i' as c_char;
+pub const ERL_NIL_EXT: c_char = b'j' as c_char;
+pub const ERL_STRING_EXT: c_char = b'k' as c_char;
+pub const ERL_LIST_EXT: c_char = b'l' as c_char;
+pub const ERL_BINARY_EXT: c_char = b'm' as c_char;
+pub const ERL_SMALL_BIG_EXT: c_char = b'n' as c_char;
+pub const ERL_LARGE_BIG_EXT: c_char = b'o' as c_char;
+pub const ERL_NEW_FUN_EXT: c_char = b'p' as c_char;
+pub const ERL_MAP_EXT: c_char = b't' as c_char;
+pub const ERL_FUN_EXT: c_char = b'u' as c_char;
+
 #[repr(C)]
 #[derive(Debug, Copy, Clone, PartialEq, Eq, Hash)]
 pub struct erlang_char_encoding(pub u32);
