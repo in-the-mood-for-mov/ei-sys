@@ -31,28 +31,44 @@ pub const MAXATOMLEN: usize = 255 + 1;
 pub const MAXATOMLEN_UTF8: usize = 255 * 4 + 1;
 pub const MAXNODELEN: usize = EI_MAXALIVELEN + 1 + EI_MAXHOSTNAMELEN;
 
-pub const ERL_ATOM_EXT: c_char = b'd' as c_char;
-pub const ERL_SMALL_ATOM_EXT: c_char = b's' as c_char;
-pub const ERL_ATOM_UTF8_EXT: c_char = b'v' as c_char;
-pub const ERL_SMALL_ATOM_UTF8_EXT: c_char = b'w' as c_char;
-pub const ERL_REFERENCE_EXT: c_char = b'e' as c_char;
-pub const ERL_NEW_REFERENCE_EXT: c_char = b'r' as c_char;
-pub const ERL_NEWER_REFERENCE_EXT: c_char = b'Z' as c_char;
-pub const ERL_PORT_EXT: c_char = b'f' as c_char;
-pub const ERL_NEW_PORT_EXT: c_char = b'Y' as c_char;
-pub const ERL_PID_EXT: c_char = b'g' as c_char;
-pub const ERL_NEW_PID_EXT: c_char = b'X' as c_char;
-pub const ERL_SMALL_TUPLE_EXT: c_char = b'h' as c_char;
-pub const ERL_LARGE_TUPLE_EXT: c_char = b'i' as c_char;
-pub const ERL_NIL_EXT: c_char = b'j' as c_char;
-pub const ERL_STRING_EXT: c_char = b'k' as c_char;
-pub const ERL_LIST_EXT: c_char = b'l' as c_char;
-pub const ERL_BINARY_EXT: c_char = b'm' as c_char;
-pub const ERL_SMALL_BIG_EXT: c_char = b'n' as c_char;
-pub const ERL_LARGE_BIG_EXT: c_char = b'o' as c_char;
-pub const ERL_NEW_FUN_EXT: c_char = b'p' as c_char;
-pub const ERL_MAP_EXT: c_char = b't' as c_char;
-pub const ERL_FUN_EXT: c_char = b'u' as c_char;
+pub const SMALL_INTEGER_EXT: u8 = b'a';
+pub const INTEGER_EXT: u8 = b'b';
+pub const FLOAT_EXT: u8 = b'c';
+pub const ATOM_EXT: u8 = b'd';
+pub const SMALL_ATOM_EXT: u8 = b's';
+pub const REFERENCE_EXT: u8 = b'e';
+pub const NEW_REFERENCE_EXT: u8 = b'r';
+pub const NEWER_REFERENCE_EXT: u8 = b'Z';
+pub const PORT_EXT: u8 = b'f';
+pub const NEW_PORT_EXT: u8 = b'Y';
+pub const NEW_FLOAT_EXT: u8 = b'F';
+pub const PID_EXT: u8 = b'g';
+pub const NEW_PID_EXT: u8 = b'X';
+pub const SMALL_TUPLE_EXT: u8 = b'h';
+pub const LARGE_TUPLE_EXT: u8 = b'i';
+pub const NIL_EXT: u8 = b'j';
+pub const STRING_EXT: u8 = b'k';
+pub const LIST_EXT: u8 = b'l';
+pub const BINARY_EXT: u8 = b'm';
+pub const BIT_BINARY_EXT: u8 = b'M';
+pub const SMALL_BIG_EXT: u8 = b'n';
+pub const LARGE_BIG_EXT: u8 = b'o';
+pub const NEW_FUN_EXT: u8 = b'p';
+pub const EXPORT_EXT: u8 = b'q';
+pub const MAP_EXT: u8 = b't';
+pub const FUN_EXT: u8 = b'u';
+pub const ATOM_UTF8_EXT: u8 = b'v';
+pub const SMALL_ATOM_UTF8_EXT: u8 = b'w';
+
+pub const DIST_HEADER: u8 = b'D';
+pub const ATOM_CACHE_REF: u8 = b'R';
+pub const ATOM_INTERNAL_REF2: u8 = b'I';
+pub const ATOM_INTERNAL_REF3: u8 = b'K';
+pub const BINARY_INTERNAL_REF: u8 = b'J';
+pub const BIT_BINARY_INTERNAL_REF: u8 = b'L';
+pub const COMPRESSED: u8 = b'P';
+
+pub const VERSION_MAGIC: u8 = 131;
 
 #[repr(C)]
 #[derive(Debug, Copy, Clone, PartialEq, Eq, Hash)]
