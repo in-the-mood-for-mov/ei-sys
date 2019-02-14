@@ -1,10 +1,11 @@
 [package]
 name = "ei-sys"
 description = "Low level Rust bindings to ei, a library to communicate with distributed Erlang."
-version = "0.4.0"
+version = "0.5.0"
 license = "Apache-2.0"
 authors = ["Simon Génier <1782845+animalsiknow@users.noreply.github.com>"]
 documentation = "https://animalsiknow.github.io/doc/ei_sys/"
+readme = "README.md"
 homepage = "https://github.com/animalsiknow/ei-sys"
 repository = "https://github.com/animalsiknow/ei-sys"
 edition = "2018"
@@ -17,6 +18,6 @@ categories = ["external-ffi-bindings", "no-std"]
 version = "0.2"
 default-features = false
 
-[target.'cfg(windows)'.dependencies.winapi]
-version = "0.3"
-features = ["inaddr"]
+[dependencies.in_addr]
+version = "0.1.2"
+features = ["no-std"]
