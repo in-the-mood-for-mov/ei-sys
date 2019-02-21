@@ -11,12 +11,22 @@ use libc::{c_char, c_int, c_long, c_longlong, c_short, c_uchar, c_uint, c_ulong,
 
 pub const ERL_TICK: c_int = 0;
 pub const ERL_MSG: c_int = 1;
-pub const ERL_NO_DAEMON: c_int = -2;
 pub const ERL_ERROR: c_int = -1;
+pub const ERL_NO_DAEMON: c_int = -2;
 pub const ERL_NO_PORT: c_int = -3;
 pub const ERL_CONNECT_FAIL: c_int = -4;
 pub const ERL_TIMEOUT: c_int = -5;
 pub const ERL_NO_REMOTE: c_int = -6;
+
+pub const ERL_LINK: u8 = 1;
+pub const ERL_SEND: u8 = 2;
+pub const ERL_EXIT: u8 = 3;
+pub const ERL_UNLINK: u8 = 4;
+pub const ERL_NODE_LINK: u8 = 5;
+pub const ERL_REG_SEND: u8 = 6;
+pub const ERL_GROUP_LEADER: u8 = 7;
+pub const ERL_EXIT2: u8 = 8;
+pub const ERL_PASS_THROUGH: u8 = b'p';
 
 pub const EI_MAXHOSTNAMELEN: usize = 64;
 pub const EI_MAXALIVELEN: usize = 63;
