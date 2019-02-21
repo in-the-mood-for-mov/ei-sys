@@ -4,7 +4,24 @@ This library contains low level bindings for `ei`, a library to handle the Erlan
 
 ## Compiling This Crate
 
-Because this crate needs the Erlang shell to configure itself and because it statically links to `libei.a`, Erlang needs to be installed where is crate is compiled. Erlang is not needed at runtime.
+The library with which this crate links is not usually included in the default link path. There are two ways to configure this crate.
+
+* If you have a full Erlang installation, the build script will invoke the Erlang shell to find where it installed its libraries. This is the recommended way to configure this crate.
+* You can set the `EI_LINK_SEARCH` environment variable to the directory that contains libei.
+
+### Windows
+
+The official Erlang binaries are compiled with MSVC 11 (Visual Studio 2012), which is not ABI compatible with binaries built with more recent MSVC versions, including those that are compatible with Rust. You will need to build you own Erlang. You can follow [the official instructions](https://github.com/erlang/otp/blob/master/HOWTO/INSTALL-WIN32.md), but change the `PATH`, `LIBPATH`, `LIB`, and `INCLUDE` environment for those of the version of MSVC you are using with Rust.
+ 
+For example, for a `x86_64` build with Visual Studio 2017, open the *x64 Native Tool Command Promp for VS 2017*, and then you can see the values of the variables listed above by typing
+```
+echo %PATH%
+echo %LIBPATH%
+echo %LIB%
+echo %INCLUDE%
+```
+
+Note also that Erlang does not build with mingw. Thus you cannot use this crate with a `{i686|x86_64}-pc-windows-gnu` version of Rust, i.e. you need to use `{i686|x86_64}-pc-windows-msvc`.
 
 ## Documentation
 

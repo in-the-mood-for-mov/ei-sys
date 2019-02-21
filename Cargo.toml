@@ -1,7 +1,7 @@
 [package]
 name = "ei-sys"
 description = "Low level Rust bindings to ei, a library to communicate with distributed Erlang."
-version = "0.8.0"
+version = "0.8.1"
 license = "Apache-2.0"
 authors = ["Simon Génier <1782845+animalsiknow@users.noreply.github.com>"]
 documentation = "https://animalsiknow.github.io/doc/ei_sys/"
